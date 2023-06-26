@@ -2,12 +2,14 @@ import geatpy as ea
 import numpy as np
 
 def Hv(Objv,max_of,o):
+    Objv = Objv.copy()
     Max = max_of*1.1   # 每一列最大值
-    if o ==2:
+    # if o ==2:
     # print(np.shape(max_of))
-        Min = np.min(Objv,0)  # 每一列最小值
-    else:
-        Min = np.zeros(len(Objv[0]))
+    Min = np.min(Objv,0)  # 每一列最小值
+    #Min = np.zeros(len(Objv[0]))
+    # else:
+        # Min = np.zeros(len(Objv[0]))
     # print(np.shape(Min))
     b = np.shape(Objv)
 
@@ -21,6 +23,7 @@ def Hv(Objv,max_of,o):
     # print(type(Objv), type(bbbb))
     # print(Objv)
     HV = ea.indicator.HV(Objv,bbbb)
+    # HV = ea.indicator.HV(Objv)
     # print(np.shape(Objv))
     # print(HV)
     return  HV
